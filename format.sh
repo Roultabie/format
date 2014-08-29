@@ -6,7 +6,7 @@ if [ ! -z $1 ]
     PARTTYPE=$1
 fi
 
-if [[ ! -x mkfs.$PARTTYPE ]]
+if [ ! -x /usr/bin/mkfs.$PARTTYPE ] && [ ! -x /usr/local/bin/mkfs.$PARTTYPE ]
 then
     echo "Impossible de trouver le binaire 'mkfs.$PARTTYPE'. Veuillez vérifier le système de fichier choisi"
     exit;
