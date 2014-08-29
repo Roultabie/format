@@ -2,6 +2,10 @@
 MOUNTPOINT=/dev/sdx1
 PARTTYPE=vfat
 
+if [ ! -z $1 ]
+    PARTTYPE=$1
+fi
+
 if [[ ! -x mkfs.$PARTTYPE ]]
 then
     echo "Impossible de trouver le binaire 'mkfs.$PARTTYPE'. Veuillez vérifier le système de fichier choisi"
