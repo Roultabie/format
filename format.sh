@@ -1,8 +1,8 @@
-#!/bin/bash
 MOUNTPOINT=/dev/sdx1
 PARTTYPE=vfat
 
 if [ ! -z $1 ]
+then
     PARTTYPE=$1
 fi
 
@@ -14,7 +14,7 @@ fi
 
 while true
 do
-    if [[ -a MOUNTPOINT ]]
+    if [[ -a $MOUNTPOINT ]]
     then
         echo "Formatage en cours !"
         umount $MOUNTPOINT
